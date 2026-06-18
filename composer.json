@@ -30,7 +30,7 @@
     "livewire/livewire": "^v3.0.0",
     "spatie/laravel-ignition": "^2.0",
     "spatie/laravel-query-builder": "^6.3",
-    "kalnoy/nestedset": "~6.0",
+    "kalnoy/nestedset": "~6.0|~7.0",
     "scssphp/scssphp": "~1.0",
     "symfony/yaml": "~7.0",
     "tastyigniter/ti-ext-api": "^4.0",
