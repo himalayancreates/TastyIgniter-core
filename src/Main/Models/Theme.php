@@ -99,7 +99,10 @@ class Theme extends Model
             return $instance;
         }
 
-        $instance = self::firstOrCreate(['code' => $themeCode]);
+        $instance = self::firstOrCreate(
+            ['code' => $themeCode],
+            ['name' => $theme->label ?? ucwords(str_replace(['-', '_'], ' ', $themeCode))],
+        );
 
         return self::$instances[$themeCode] = $instance;
     }

@@ -475,7 +475,7 @@ if (!function_exists('media_url')) {
      */
     function media_url(?string $path = null): string
     {
-        return resolve(MediaLibrary::class)->getMediaUrl($path);
+        return resolve(MediaLibrary::class)->getMediaUrl($path ?? '');
     }
 }
 

@@ -121,7 +121,7 @@ return new class extends Migration
             DB::statement('ALTER TABLE themes ALTER COLUMN data TYPE json USING data::json');
         } else {
             Schema::table('themes', function(Blueprint $table) {
-                $table->json('data')->change();
+                $table->json('data')->nullable()->change();
             });
         }
     }

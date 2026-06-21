@@ -57,6 +57,11 @@ class BlueprintMixin
                 return;
             }
 
+            // PostgreSQL cannot DROP INDEX when a constraint owns it — must DROP CONSTRAINT instead
+            if (DB::getDriverName() === 'pgsql' && ends_with($key, '_unique')) {
+                return $this->dropUnique($key);
+            }
+
             return $this->dropIndex($key);
         };
     }
